@@ -1,0 +1,10 @@
+      <div class="sideLf">
+            <h2 class="titLf">用户设置</h2>
+            <ul class="sideBar">
+                <li><a href="{% url 'user_info' %}" class="personal">个人信息</a></li>
+                <li><a href="{% url 'user_resetpw' %}" class="psw">密码修改</a></li>
+                <li><a href="{% url 'user_record' %}" class="record">购买记录</a></li>
+                <li><a href="{% url 'user_collect' %}" class="pCollect">课程收藏</a></li>
+                <li class="active"><a href="{% url 'user_recharge' %}" class="vip">用户充值</a></li>
+            </ul>
+        </div>

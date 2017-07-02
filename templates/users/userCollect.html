@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block  head_title %}
+    <title>用户-课程收藏</title>
+{% endblock %}
+
+{% block head_css %}
+     <link href="{% static 'css/bodycoler.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="wrapper">
+    <div class="path">
+        <a href="">首页</a>&gt;<a href="">用户设置</a>
+    </div>
+    <div class="clearfix" style="height: auto;">
+        {% include 'user_setting_base.html' %}
+        <div class="main row">
+            <h2 class="orderTit">课程收藏</h2>
+            <div class="projectCollect">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>课程名</th>
+                            <th>介绍</th>
+                            <th>收藏时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Web 开发基础课程</td>
+                            <td>专业的Web 开发</td>
+                            <td>2017-10-23 10:22:22</td>
+                        </tr>
+                        <tr>
+                            <td>Web 开发基础课程</td>
+                            <td>专业的Web 开发</td>
+                            <td>2017-10-23 10:22:22</td>
+                        </tr>
+                        <tr>
+                            <td>Web 开发基础课程</td>
+                            <td>专业的Web 开发</td>
+                            <td>2017-10-23 10:22:22</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

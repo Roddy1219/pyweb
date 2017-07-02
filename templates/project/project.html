@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head_title %}
+    <title>课程列表</title>
+{% endblock %}
+
+{% block head_css %}
+    <link href="{% static 'css/bodycoler.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+   <div class="wrapper">
+    <div class="path">
+        <a href="">首页</a>&gt;<a href="">课程</a>&gt;<a href="">Python基础</a>
+    </div>
+    <div class="genre">课程分类：<a href="" class="active">全部</a><a href="">实战教程</a><a href="">Python基础</a><a href="">Python Web 开发</a><a href="">自动化py</a></div>
+    <div class="content">
+        <div class="most"><a href="">最新</a><a href="" class="active">最热</a></div>
+        <ul class="hList nList" id="project">
+            <li>
+                <a href=""><img src="/static/images/logo.png"></a>
+                <div class="nListDescribe">
+                    <h3><a href="">算法导论</a></h3>
+                    <p><a href="">基础算法理论课-理解算法背后的思想</a></p>
+                </div>
+            </li>
+            <li>
+                <a href=""><img src="images/img/1.jpg"></a>
+                <div class="nListDescribe">
+                    <h3><a href="">算法导论</a></h3>
+                    <p><a href="">基础算法理论课-理解算法背后的思想</a></p>
+                </div>
+            </li>
+            <li>
+                <a href=""><img src="images/img/1.jpg"></a>
+                <div class="nListDescribe">
+                    <h3><a href="">算法导论</a></h3>
+                    <p><a href="">基础算法理论课-理解算法背后的思想</a></p>
+                </div>
+            </li>
+            <li>
+                <a href=""><img src="images/img/1.jpg"></a>
+                <div class="nListDescribe">
+                    <h3><a href="">算法导论</a></h3>
+                    <p><a href="">基础算法理论课-理解算法背后的思想</a></p>
+                </div>
+            </li>
+            <li>
+                <a href=""><img src="images/img/1.jpg"></a>
+                <div class="nListDescribe">
+                    <h3><a href="">算法导论</a></h3>
+                    <p><a href="">基础算法理论课-理解算法背后的思想</a></p>
+                </div>
+            </li>
+            <li>
+                <a href=""><img src="images/img/1.jpg"></a>
+                <div class="nListDescribe">
+                    <h3><a href="">算法导论</a></h3>
+                    <p><a href="">基础算法理论课-理解算法背后的思想</a></p>
+                </div>
+            </li>
+            <li>
+                <a href=""><img src="images/img/1.jpg"></a>
+                <div class="nListDescribe">
+                    <h3><a href="">算法导论</a></h3>
+                    <p><a href="">基础算法理论课-理解算法背后的思想</a></p>
+                </div>
+            </li>
+            <li>
+                <a href=""><img src="images/img/1.jpg"></a>
+                <div class="nListDescribe">
+                    <h3><a href="">算法导论</a></h3>
+                    <p><a href="">基础算法理论课-理解算法背后的思想</a></p>
+                </div>
+            </li>
+            <li>
+                <a href=""><img src="images/img/1.jpg"></a>
+                <div class="nListDescribe">
+                    <h3><a href="">算法导论</a></h3>
+                    <p><a href="">基础算法理论课-理解算法背后的思想</a></p>
+                </div>
+            </li>
+            <li>
+                <a href=""><img src="images/img/1.jpg"></a>
+                <div class="nListDescribe">
+                    <h3><a href="">算法导论</a></h3>
+                    <p><a href="">基础算法理论课-理解算法背后的思想</a></p>
+                </div>
+            </li>
+            <li>
+                <a href=""><img src="images/img/1.jpg"></a>
+                <div class="nListDescribe">
+                    <h3><a href="">算法导论</a></h3>
+                    <p><a href="">基础算法理论课-理解算法背后的思想</a></p>
+                </div>
+            </li>
+            <li>
+                <a href=""><img src="images/img/1.jpg"></a>
+                <div class="nListDescribe">
+                    <h3><a href="">算法导论</a></h3>
+                    <p><a href="">基础算法理论课-理解算法背后的思想</a></p>
+                </div>
+            </li>
+        </ul>
+        <div id="page">
+            此处是分页 页面有ajax
+        </div>
+    </div>
+</div>
+
+    <script>
+        //以下异步分页
+        function demo(curr) {
+            $.getJSON('test/demo1.json', {
+                page: curr || 1 //向服务端传的参数
+            }, function (res) {
+                //此处仅仅是为了演示变化的内容
+                var demoContent = (new Date().getTime() / Math.random() / 1000) | 0;
+                document.getElementById('view1').innerHTML = res.content + demoContent;
+                //显示分页
+                laypage({
+                    cont: $('#page'), //容器。值支持id名、原生dom对象，jquery对象,
+                    pages: 100, //总页数
+                    skip: true, //是否开启跳页
+                    skin: '#4F98EE',
+                    groups: 3 //连续显示分页数
+                });
+            });
+        };
+        //运行
+        demo();
+    </script>
+{% endblock %}

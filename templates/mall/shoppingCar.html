@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head_title %}
+    <title>用户-课程支付</title>
+{% endblock %}
+
+
+{% block head_css %}
+    <link href="{% static 'css/bodycoler.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+    <div class="path">
+        <a href="">首页</a>&gt;<a href="">用户设置</a>
+    </div>
+    <div class="row" style="padding-bottom: 50px; min-height: 600px;">
+        <h2 class="orderTit">课程支付</h2>
+        <div class="vipCtn" style="padding:20px;">
+
+                <table class="table tbBox">
+                    <thead>
+                    <tr>
+                        <th colspan="3"><span>订单编号：123456798</span><span class="time">2017-02-23 24:30:00</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="width: 70px; padding-left: 20px;"><span class="myGoods"></span></td>
+                        <th>Python课程</th>
+                        <th>100元</th>
+                    </tr>
+                    </tbody>
+                </table>
+                <table class="table tbBox">
+                    <thead>
+                    <tr>
+                        <th colspan="3"><span>订单编号：123456798</span><span class="time">2017-02-23 24:30:00</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="width: 70px; padding-left: 20px;"><span class="myGoods"></span></td>
+                        <th>Python课程</th>
+                        <th>100元</th>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="allNum">
+                    <a href="{% url 'mall_order' %}"><button type="submit" class="">提交订单</button></a>
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

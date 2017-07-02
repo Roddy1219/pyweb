@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head_title %}
+    <title>商品详情</title>
+{% endblock %}
+
+{% block head_script %}
+    <script type="text/javascript" src="{% static 'js/jquery.SuperSlide.2.1.1.js' %}"></script>
+{% endblock %}
+
+{% block head_css %}
+    <link href="{% static 'css/bodycoler.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="wrapper">
+    <div class="path">
+        <a href="">首页</a>&gt<a href="">商城</a>
+    </div>
+    <div class="clearfix row">
+        <div class="lookGoods">
+            <div class="goodsBigImg bd">
+                <ul>
+                    <li><img src="{% static 'images/img-defult.png' %}"></li>
+                    <li><img src="{% static 'images/img/2.png' %}"></li>
+                    <li><img src="{% static 'images/img-defult.png' %}"></li>
+                    <li><img src="{% static 'images/img/2.png' %}"></li>
+                </ul>
+            </div>
+            <ul class="goodsImgList hd">
+                <li><img src="{% static 'images/img-defult.png' %}"></li>
+                    <li><img src="{% static 'images/img/2.png' %}"></li>
+                    <li><img src="{% static 'images/img-defult.png' %}"></li>
+                    <li><img src="{% static 'images/img/2.png' %}"></li>
+            </ul>
+
+        </div>
+        <script>
+            jQuery(".lookGoods").slide({ mainCell:".bd ul",effect:"fade",autoPlay:false });
+        </script>
+        <div class="goodsDescribe">
+            <form>
+                <h2 class="goodsTit">人生苦短python当歌</h2>
+                <div class="aboutTit">这里是商品简短介绍</div>
+                <div class="price">148<span>元</span></div>
+                <dl class="size clearfix" id="size">
+                    <dt>尺寸：</dt>
+                    <dd><a href="javascript:void(0)">S</a><a  href="javascript:void(0)" class="active">M</a><a href="javascript:void(0)">L</a></dd>
+                </dl>
+                <div class="number clearfix">
+                    <span class="numTit">数量：</span>
+                    <div class="numText">
+                        <a href="javascript:void(0)" id="reduce" onclick='reduce()'>-</a>
+                        <input type="text" value="1" id="numberText">
+                        <a href="javascript:void(0)" id="add" onclick="add()">+</a>
+                    </div>
+                </div>
+                <div class="goShopping">
+                    <button type="submit" class="">立即购买</button>
+                    <button type="button" class="active">加入购物车</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row address">
+        <h2 class="orderTit">商品详情</h2>
+        <ul class="aboutGoods clearfix">
+            <li>商品名：123456</li>
+            <li>商品名：12</li>
+            <li>数量：1</li>
+            <li>主图来源：123</li>
+            <li>价格：156元</li>
+        </ul>
+    </div>
+    <div class="row ">
+        <h2 class="orderTit">实拍图</h2>
+        <ul class="goodsPic clearfix">
+            <li><img src=""></li>
+            <li><img src=""></li>
+            <li><img src=""></li>
+            <li><img src=""></li>
+        </ul>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="{% static 'js/normal.js' %}"></script>
+<script type="text/javascript">
+    choice('#size dd a','a');
+    //商品数量增减
+    function reduce(){
+        var numberVal=$('#numberText').val();
+        if (numberVal>1){
+            $('#numberText').val(numberVal-'1');
+        }
+    }
+    function add(){
+        var numberVal=$('#numberText').val();
+        numberVal++;
+        $('#numberText').val(numberVal);
+    }
+</script>
+{% endblock %}

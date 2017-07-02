@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head_title %}
+    <title>课程详情</title>
+{% endblock %}
+
+{% block head_css %}
+    <link href="{% static 'css/bodycoler.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+<div class="wrapper">
+    <div class="path">
+        <a href="">首页</a>&gt;<a href="">课程</a>&gt;<a href="">Python基础</a>
+    </div>
+    <div class="clearfix">
+        <div class="project">
+            <div class="video">
+
+            </div>
+            <div class="videoDescribe">
+                <ul class="titList" id="tab">
+                    <li class="active">课程介绍</li>
+                    <li>课程目录</li>
+                </ul>
+                <dl class="projectDetail tabList">
+                    <dt>共20课时</dt>
+                    <dd>涉及到的知识点：基础数据数据类型、字符串str、列表list、元祖tuple、字典dict、if判断语句、while循环语句、for循环语句、面向过程编程（函数def）、面向对象编程（类class）、模块、内建函数、文件操作、pygame游戏开发。<br>从Web安全XSS的定义开始讲起，到深入剖析XSS攻击的原理和流程，了解常见XSS攻击的危害。同时通过项目实战针对性的分析如何应对XSS攻击做到安全的XSS防御措施。</dd>
+                </dl>
+                <ul class="catalog tabList" style="display: none;">
+                    <li><a href="" class="active">1. 课程介绍</a></li>
+                    <li><a href="">2. 环境搭建</a></li>
+                    <li><a href="">3. 基础语法介绍</a></li>
+                    <li><a href="">4. 文件结构图介绍</a></li>
+                    <li><a href="">5. 自动补全、帮助文档</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="sideRt">
+            <h3>Python基础班2016版</h3>
+            <dl class="teacher">
+                <dt><span><img src=""></span></dt>
+                <dd>
+                    <div>讲师</div>
+                    <div>罗迪</div>
+                </dd>
+            </dl>
+            <div class="teacherDes">本视频是python学科，专心录制的python基础视频，该视频主要为零基础的同学精心设计、安排、录制的视频。通过通俗易懂的语言讲解，使得在学习的过程...</div>
+            <a href="" class="collect">收藏课程</a>
+            <a href="" class="buy">￥200购买课程</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#tab li').on('click',function () {
+            var order=$(this).index();
+            $(this).addClass('active').siblings('li').removeClass('active');
+            $('.tabList').eq(order).show().siblings('.tabList').hide();
+        })
+    })
+</script>
+{% endblock %}

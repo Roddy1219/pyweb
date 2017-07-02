@@ -1,0 +1,76 @@
+* {padding: 0; margin: 0;}
+html,body {position:relative; font-family:Roboto,"Helvetica Neue",Helvetica,"Hiragino Sans GB",STHeitiSC-Light,"Microsoft YaHei","微软雅黑",Arial,sans-serif; font-size: 14px; background-color: #FFFFFF; color: #394A58;}
+input,select,textarea,button { font:12px  Microsoft YaHei, Helvetica, sans-serif; outline: none;}
+table { empty-cells: show; border-collapse: collapse; }
+tr,td,th{border:none;padding:0;margin:0;}
+caption, th { text-align: left; font-weight: 400; }
+ul li, ol li { list-style: none; margin: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight:normal; font-size:inherit;}
+em, cite, i { font-style: normal; }
+img,a img { border:0; margin:0; padding:0;}
+button{cursor: pointer;}
+a img { border: none; vertical-align: middle;}
+a{text-decoration:none; color: #394A58;}
+a:hover{text-decoration: underline;}
+.clearfix:after {content: " "; display: block; clear: both;  height: 0;}
+.clearfix {zoom: 1;}
+
+.wrapper{width: 1060px; margin: 0 auto; overflow: hidden;}
+.headWrap{width: 1060px; margin: 0 auto;}
+
+.header{position: relative; height: 70px; background-color: #3E3D58; z-index: 100;}
+.logo{float: left; padding-top: 5px; height: 65px; width: 60px; margin-right: 110px;}
+.nav{float: left; overflow: hidden; margin-right: 60px;}
+.nav li{float: left; margin-right: 30px;}
+.nav li a{display: block; height: 50px; padding: 0 2px; font-size: 15px; color:#9292AE;  line-height: 60px;}
+.nav li a.active, .nav li a:hover{color: #FFFFFF; border-bottom: 4px solid #4F98EE; text-decoration: none;}
+.searchBox{float: left; width: 265px; padding-top: 15px;}
+.search{background-color: #6D6C80; width: 265px;height: 40px; border-radius: 2px; line-height: 40px; overflow: hidden;}
+.search input{float: left;width: 185px; border:none; font-size: 12px; padding: 10px 0 10px 10px; color: #FFFFFF; background-color: #6D6C80;}
+.search button{float: left; width: 70px; height: 40px; border:none; background-color: #4F98EE ; color: #FFFFFF;}
+.search input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #DDDDDD; opacity:1;
+}
+.search input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #DDDDDD;opacity:1;
+}
+.search input:-ms-input-placeholder{
+    color: #DDDDDD;opacity:1;
+}
+.search input::-webkit-input-placeholder{
+    color: #DDDDDD;opacity:1;
+}
+.tool{float: right; padding-top: 15px;}
+.tool a{padding: 6px 20px; color: #8B8B8E;border:2px solid #3E3D58; margin-right: 10px; line-height: 40px;}
+.tool a.active{border:2px solid #6D6B80; border-radius: 2px;}
+
+.footer{background: #1F2532; margin-top: 60px; padding-top: 25px; color: #FFFFFF;}
+.footer a{color: #FFFFFF;}
+.fTool{float: right;}
+.fTool a{float: left; display: block; width: 27px; height: 27px; margin-right: 25px; font-size: 0;}
+.fTool a.weiBo{background: url("../images/ic-social-weibo.png") no-repeat 0 0;}
+.fTool a.weiXin{background: url("../images/ic-social-wechat.png") no-repeat 0 0;}
+.fTool a.qq{background: url("../images/ic-social-qq.png") no-repeat 0 0;}
+.fNav a{margin-right: 25px; font-size: 15px;}
+.fNav a:hover{text-decoration: underline;}
+.copyright{margin-top: 25px; padding: 20px 0; line-height: 30px; border-top: 1px solid #4B505B;}
+.copyright .police{float: right; padding-left: 20px; background: url("../images/ic-police.png") no-repeat 0 center;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

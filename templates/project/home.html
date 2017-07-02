@@ -1,0 +1,112 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head_title %}
+<title>课程首页</title>
+{% endblock %}
+
+
+{% block head_css %}
+    <link href="{% static 'css/flexslider.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block head_script %}
+    <script type="text/javascript" src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+{% endblock %}
+
+
+{% block  content %}
+<div class="banner" id="slideBox">
+    <div class="flexslider" style="overflow: hidden">
+        <ul class="slides">
+            <li><img src="{% static 'images/img/banner1.jpg' %}" width="100%" /></li>
+            <li><img src="{% static 'images/img/banner2.jpg' %}" width="100%" /></li>
+            <li><img src="{% static 'images/img/banner3.jpg' %}" width="100%" /></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    $(".flexslider").flexslider({
+        animation:"slide",
+        slideshowSpeed: 5000, //展示时间间隔ms
+        animationSpeed: 200, //滚动时间ms
+        touch: true, //是否支持触屏滑动
+        slideshow: true,
+        directionNav: false
+    });
+</script>
+
+<div class="wrapper">
+    <h2 class="tit titIcon01"><a href="" class="more">更多&nbsp;<span>&gt;</span></a>实战推荐</h2>
+    <ul class="hList sList">
+        <li>
+            <a href="">
+                <div class="listImg"><img src="{% static 'images/img/1.jpg' %}"></div>
+                <div class="liDescribe">
+                    <h3>Java</h3>
+                    <p>编程技巧与实战</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="listImg"><img src="{% static 'images/img/1.jpg' %}"></div>
+                <div class="liDescribe">
+                    <h3>Python</h3>
+                    <p>编程技巧与实战</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="listImg"><img src="{% static 'images/img/1.jpg' %}"></div>
+                <div class="liDescribe">
+                    <h3>Swift</h3>
+                    <p>编程技巧与实战</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="listImg"><img src="{% static 'images/img/1.jpg' %}"></div>
+                <div class="liDescribe">
+                    <h3>Html 5</h3>
+                    <p>编程技巧与实战</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <h2 class="tit titIcon02"><a href="" class="more">更多&nbsp;<span>&gt;</span></a>热门推荐</h2>
+    <ul class="hList nList">
+        <li>
+            <a href=""><img src="{% static 'images/img/1.jpg' %}" width="235"></a>
+            <div class="nListDescribe">
+                <h3><a href="">算法导论</a></h3>
+                <p><a href="">基础算法理论课-理解算法背后的思想</a></p>
+            </div>
+        </li>
+        <li>
+            <a href=""><img src="{% static 'images/img/1.jpg' %}" width="235"></a>
+            <div class="nListDescribe">
+                <h3><a href="">算法导论</a></h3>
+                <p><a href="">基础算法理论课-理解算法背后的思想</a></p>
+            </div>
+        </li>
+        <li>
+            <a href=""><img src="{% static 'images/img/1.jpg' %}" width="235"></a>
+            <div class="nListDescribe">
+                <h3><a href="">算法导论</a></h3>
+                <p><a href="">基础算法理论课-理解算法背后的思想</a></p>
+            </div>
+        </li>
+        <li>
+            <a href=""><img src="{% static 'images/img/1.jpg' %}" width="235"></a>
+            <div class="nListDescribe">
+                <h3><a href="">算法导论</a></h3>
+                <p><a href="">基础算法理论课-理解算法背后的思想</a></p>
+            </div>
+        </li>
+    </ul>
+</div>
+{% endblock %}

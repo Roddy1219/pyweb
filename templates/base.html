@@ -1,0 +1,74 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head_title %}
+
+    {% endblock %}
+    <link href="{% static 'css/normal.css' %}" type="text/css" rel="stylesheet">
+    {% block head_css %} {% endblock %}
+    <link href="{% static 'css/css.css' %}" type="text/css" rel="stylesheet">
+
+    <script type="text/javascript" src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
+
+    {% block head_script %} {% endblock %}
+
+</head>
+<body>
+<div class="header">
+    <div class="headWrap">
+        <a href="{% url 'pro_index' %}" class="logo"><img src="{% static 'images/logo.png' %}"></a>
+        <ul class="nav">
+            <li><a href="{% url 'pro_index' %}" class="active">主页</a></li>
+            <li><a href="{% url 'course_index' %}">课程</a></li>
+            <li><a href="{% url 'mall_index' %}">商城</a></li>
+        </ul>
+        <div class="searchBox">
+            <div class="search">
+                <form>
+                    <input type="text" placeholder="搜索您感兴趣的课程"><button type="submit">搜索</button>
+                </form>
+            </div>
+        </div>
+        <ul class="user" {% if user.is_authenticated %} style="display: block;" {% else %} style="display: none;" {% endif %}>
+            <li class="down">
+
+                <div class="downTit"><span class="userImg"></span>用户名</div>
+                <ul class="downmenu">
+                    <li><a href="{% url 'user_info' %}">设置</a></li>
+                    <li><a href="{% url 'user_logout' %}">退出</a></li>
+
+                </ul>
+            </li>
+            <li>|</li>
+            <li>
+                <a href="{% url 'mall_pay' %}"><span class="shoppingCar"></span>购物车<span>(0)</span></a>
+            </li>
+        </ul>
+        {% if not user.is_authenticated %}
+            <div class="tool" style="display: block;"><a href="{% url 'user_login' %}">登录</a><a href="{% url 'user_register' %}" class="active">注册</a></div>
+        {% endif %}
+    </div>
+</div>
+{% block  content %}
+
+{% endblock %}
+<div class="footer">
+    <div class="wrapper">
+        <div>
+            <div class="fTool">
+                <a href="" class="weiBo">微博</a><a href="" class="weiXin">微信</a><a href="" class="qq">QQ</a>
+            </div>
+            <div class="fNav">
+                <a href="">网站首页</a><a href="">联系我们</a><a href="">友情连接</a><a href="">加入我们</a><a href="">讲师招募</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="police">京公安网备  11010802021241号</div>
+            <p>Copyright © 2017 xxxxx.com All Rights Reserved 京ICP备 170214</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

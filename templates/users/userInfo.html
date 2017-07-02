@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block  head_title %}
+    <title>用户-个人设置</title>
+{% endblock %}
+
+{% block head_css %}
+     <link href="{% static 'css/bodycoler.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="wrapper">
+    <div class="path">
+        <a href="">首页</a>&gt;<a href="">用户设置</a>
+    </div>
+    <div class="clearfix" style="height: auto;">
+       {% include 'user_setting_base.html' %}
+        <div class="main row">
+            <h2 class="orderTit">个人信息</h2>
+            <div class="row personalCtn">
+                <dl>
+                    <dt>用户名：</dt>
+                    <dd>123456</dd>
+                </dl>
+                <dl>
+                    <dt>注册时间：</dt>
+                    <dd>2015-05-05</dd>
+                </dl>
+                <dl>
+                    <dt>E-mail：</dt>
+                    <dd>luodi@qq.com</dd>
+                </dl>
+                <dl>
+                    <dt>账户余额：</dt>
+                    <dd>200元</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

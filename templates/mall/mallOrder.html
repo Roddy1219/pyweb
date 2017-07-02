@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head_title %}
+    <title>商品订单</title>
+{% endblock %}
+
+
+{% block head_css %}
+    <link href="{% static 'css/bodycoler.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block content %}
+<div class="wrapper">
+    <div class="path">
+        <a href="">首页</a>&gt<a href="">商城</a>
+    </div>
+    <div class="clearfix row">
+        <div class="mallImg">
+            <img src="">
+        </div>
+        <div class="mallDescribe">
+            <dl>
+                <dt>品名：</dt>
+                <dd>python logo</dd>
+            </dl>
+            <dl>
+                <dt>规格：</dt>
+                <dd>L</dd>
+            </dl>
+            <dl>
+                <dt>数量：</dt>
+                <dd>1</dd>
+            </dl>
+            <dl>
+                <dt>产品介绍：</dt>
+                <dd>py产品介绍产品介绍thon logo</dd>
+            </dl>
+            <dl>
+                <dt>价格：</dt>
+                <dd>￥200</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="row address">
+        <h2 class="orderTit">选择已有地址</h2>
+        <div class="addressChoice">
+            <label><input type="radio" checked="checked"><span>中国   四川  成都   武侯区  火车南站西路481号  联系人  roddy  电话：13551027080</span></label>
+        </div>
+    </div>
+    <div class="row addAddress">
+        <form>
+            <h2 class="orderTit">新增地址</h2>
+            <div class="clearfix addressCtn">
+                <label>国家:</label>
+                <select>
+                    <option>中国</option>
+                    <option>美国</option>
+                </select>
+            </div>
+            <div class="clearfix addressCtn">
+                <label>省份:</label>
+                <select>
+                    <option>选择省</option>
+                    <option>四川省</option>
+                </select>
+                <select>
+                    <option>选择市</option>
+                    <option>成都市</option>
+                </select>
+                <select>
+                    <option>选择区</option>
+                    <option>高新区</option>
+                </select>
+            </div>
+            <div class="clearfix addressCtn">
+                <label>详细地址：</label>
+                <input type="text" placeholder="详细地址" class="addressDetail">
+            </div>
+            <div class="clearfix addressCtn">
+                <label>联系人：</label>
+                <input type="text" placeholder="联系人">
+            </div>
+            <div class="clearfix addressCtn">
+                <label>电话：</label>
+                <input type="text" placeholder="电话">
+            </div>
+            <div class="save"><button type="submit">保存</button></div>
+        </form>
+    </div>
+
+    <div class="row">
+        <h2 class="orderTit">选择支付方式</h2>
+          <div class="payment">
+            <div>
+                <label><input type="radio" name="pay" checked><span class="alipay">支付宝</span></label>
+            </div>
+            <div>
+                <label><input type="radio" name="pay" checked><span class="wechatpay">微信支付</span></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="clearfix all">
+            <div class="allTit">合计</div>
+            <ul>
+                <li>商品：￥200.00</li>
+                <li>运费：￥200.00</li>
+            </ul>
+        </div>
+
+
+        <div class="allNum">
+            <form>
+                <span>总计:<strong>￥210.00</strong></span><button type="submit" class="">去结算</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+    <script type="text/javascript" src="{% static 'js/normal.js' %}"></script>
+<script type="text/javascript">
+    choice('#moneyChoice li','li');
+</script>
+{% endblock %}

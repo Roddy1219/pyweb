@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head_title %}
+    <title>商城</title>
+{% endblock %}
+
+{% block head_script %}
+    <script type="text/javascript" src="{% static 'js/laypage.js' %}"></script>
+{% endblock %}
+
+{% block head_css %}
+    <link href="{% static 'css/laypage.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'css/bodycoler.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+<div class="wrapper">
+    <div class="path">
+        <a href="">首页</a>&gt;<a href="">商城</a>
+    </div>
+    <div class="genre"><a href="" class="active">全部</a><a href="">书店</a><a href="">纪念品</a><a href="">水杯</a><a href="">衣帽</a></div>
+    <div class="clearfix">
+        <ul class="mallList">
+            <li>
+                <div class="goods"><a href="{% url 'mall_detail' %}"><img src=""></a></div>
+                <div class="goodsDetail">
+                    <div class="goodsBrief"><span class="mallPrice">￥600云币</span><h4>纪念水杯</h4></div>
+                    <p class="likes">200人购买</p>
+                    <a href="" class="addCar"><span class="carIcon"
+                    ></span>加入购物车</a>
+                </div>
+            </li>
+            <li>
+                <div class="goods"><a href=""><img src=""></a></div>
+                <div class="goodsDetail">
+                    <div class="goodsBrief"><span class="mallPrice">￥600云币</span><h4>纪念水杯</h4></div>
+                    <p class="likes">200人购买</p>
+                    <a href="" class="addCar"><span class="carIcon"
+                    ></span>加入购物车</a>
+                </div>
+            </li>
+            <li>
+                <div class="goods"><a href=""><img src=""></a></div>
+                <div class="goodsDetail">
+                    <div class="goodsBrief"><span class="mallPrice">￥600云币</span><h4>纪念水杯</h4></div>
+                    <p class="likes">200人购买</p>
+                    <a href="" class="addCar"><span class="carIcon"
+                    ></span>加入购物车</a>
+                </div>
+            </li>
+            <li>
+                <div class="goods"><a href=""><img src=""></a></div>
+                <div class="goodsDetail">
+                    <div class="goodsBrief"><span class="mallPrice">￥600云币</span><h4>纪念水杯</h4></div>
+                    <p class="likes">200人购买</p>
+                    <a href="" class="addCar"><span class="carIcon"
+                    ></span>加入购物车</a>
+                </div>
+            </li>
+            <li>
+                <div class="goods"><a href=""><img src=""></a></div>
+                <div class="goodsDetail">
+                    <div class="goodsBrief"><span class="mallPrice">￥600云币</span><h4>纪念水杯</h4></div>
+                    <p class="likes">200人购买</p>
+                    <a href="" class="addCar"><span class="carIcon"
+                    ></span>加入购物车</a>
+                </div>
+            </li>
+            <li>
+                <div class="goods"><a href=""><img src=""></a></div>
+                <div class="goodsDetail">
+                    <div class="goodsBrief"><span class="mallPrice">￥600云币</span><h4>纪念水杯</h4></div>
+                    <p class="likes">200人购买</p>
+                    <a href="" class="addCar"><span class="carIcon"
+                    ></span>加入购物车</a>
+                </div>
+            </li>
+            <li>
+                <div class="goods"><a href=""><img src=""></a></div>
+                <div class="goodsDetail">
+                    <div class="goodsBrief"><span class="mallPrice">￥600云币</span><h4>纪念水杯</h4></div>
+                    <p class="likes">200人购买</p>
+                    <a href="" class="addCar"><span class="carIcon"
+                    ></span>加入购物车</a>
+                </div>
+            </li>
+            <li>
+                <div class="goods"><a href=""><img src=""></a></div>
+                <div class="goodsDetail">
+                    <div class="goodsBrief"><span class="mallPrice">￥600云币</span><h4>纪念水杯</h4></div>
+                    <p class="likes">200人购买</p>
+                    <a href="" class="addCar"><span class="carIcon"
+                    ></span>加入购物车</a>
+                </div>
+            </li>
+            <li>
+                <div class="goods"><a href=""><img src=""></a></div>
+                <div class="goodsDetail">
+                    <div class="goodsBrief"><span class="mallPrice">￥600云币</span><h4>纪念水杯</h4></div>
+                    <p class="likes">200人购买</p>
+                    <a href="" class="addCar"><span class="carIcon"
+                    ></span>加入购物车</a>
+                </div>
+            </li>
+        </ul>
+        <div id="page">
+            此处是分页 页面有ajax
+        </div>
+    </div>
+</div>
+
+<script>
+    //以下异步分页
+    function demo(curr){
+        $.getJSON('test/demo1.json', {
+            page: curr || 1 //向服务端传的参数
+        }, function(res){
+            //此处仅仅是为了演示变化的内容
+            var demoContent = (new Date().getTime()/Math.random()/1000)|0;
+            document.getElementById('view1').innerHTML = res.content + demoContent;
+            //显示分页
+            laypage({
+                cont: $('#page'), //容器。值支持id名、原生dom对象，jquery对象,
+                pages: 100, //总页数
+                skip: true, //是否开启跳页
+                skin: '#4F98EE',
+                groups: 3 //连续显示分页数
+            });
+        });
+    };
+    //运行
+    demo();
+</script>
+{% endblock %}

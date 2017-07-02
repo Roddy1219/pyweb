@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block head_title %}
+    <title>用户-微信支付</title>
+{% endblock %}
+
+{% block content %}
+<div class="header">
+    <div class="headWrap">
+        <a href="" class="logo"><img src="{% static 'images/logo.png' %}"></a>
+        <ul class="nav">
+            <li><a href="" class="active">主页</a></li>
+            <li><a href="">课程</a></li>
+            <li><a href="">商城</a></li>
+        </ul>
+        <div class="searchBox">
+            <div class="search">
+                <form>
+                    <input type="text" placeholder="搜索您感兴趣的课程"><button type="submit">搜索</button>
+                </form>
+            </div>
+        </div>
+        <ul class="user" style="display: block;">
+            <li class="down">
+                <div class="downTit"><span class="userImg"></span>用户名</div>
+                <ul class="downmenu">
+                    <li><a href="">设置</a></li>
+                    <li><a href="">退出</a></li>
+                </ul>
+            </li>
+            <li>|</li>
+            <li>
+                <a href=""><span class="shoppingCar"></span>购物车<span>(0)</span></a>
+            </li>
+        </ul>
+        <div class="tool" style="display: none;"><a href="">登录</a><a href="" class="active">注册</a></div>
+    </div>
+</div>
+
+<div class="wrapper">
+    <div class="path">
+        <a href="">首页</a>&gt;<a href="">微信支付</a>
+    </div>
+    <div class="row">
+        <div class="wechat">
+            <h2>￥200.00</h2>
+            <div class="wechatCode"><img src="{% static 'images/wechat.png' %}"></div>
+            <div class="codeTip">请在20分钟内 完成订单支付，否则订单将会被取消</div>
+            <table class="table wechatTb">
+                <tbody>
+                <tr>
+                    <td>订单编号</td>
+                    <td style="text-align: right;">123456789</td>
+                </tr>
+                <tr>
+                    <td>用户订单号</td>
+                    <td style="text-align: right;">123465789</td>
+                </tr>
+                <tr>
+                    <td>创建时间</td>
+                    <td style="text-align: right;">2017-05-22 11:11:11</td>
+                </tr>
+                <tr>
+                    <td>收款人QQ</td>
+                    <td style="text-align: right;">123456</td>
+                </tr>
+                <tr>
+                    <td>投诉人QQ</td>
+                    <td style="text-align: right;">123456</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="scan">
+                请使用微信扫一扫，扫描二维码完成支付<br>
+                付款完成后将在0.5-20分钟 完成支付操作
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="{% static 'js/normal.js' %}"></script>
+<script type="text/javascript">
+    choice('#moneyChoice li','li');
+</script>
+{% endblock %}

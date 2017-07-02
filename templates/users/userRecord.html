@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head_title %}
+    <title>用户-购买记录</title>
+{% endblock %}
+
+{% block head_css %}
+    <link href="{% static 'css/bodycoler.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="path">
+        <a href="">首页</a>&gt;<a href="">用户设置</a>
+    </div>
+    <div class="clearfix" style="height: auto;">
+       {% include 'user_setting_base.html' %}
+        <div class="main row">
+            <h2 class="orderTit">课程收藏</h2>
+            <div class="userRecord">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th colspan="4"><span>订单编号：123456798</span><span class="time">2017-02-23 24:30:00</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="width: 70px; padding-left: 20px;"><span class="myGoods"></span></td>
+                            <th>Python课程</th>
+                            <th>100元</th>
+                            <th style="width: 140px;"><button type="submit" class="goPay">去付款</button></th>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th colspan="4"><span>订单编号：123456798</span><span class="time">2017-02-23 24:30:00</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="width: 70px; padding-left: 20px;"><span class="myGoods"></span></td>
+                        <th>Python课程</th>
+                        <th>100元</th>
+                        <th style="width: 140px;"><button type="submit" class="goPay">去付款</button></th>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

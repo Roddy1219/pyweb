@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block head_title %}
+    <title>用户-密码修改</title>
+{% endblock %}
+
+{% block head_css %}
+    <link href="{% static 'css/bodycoler.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+<div class="wrapper">
+    <div class="path">
+        <a href="">首页</a>&gt;<a href="">用户设置</a>
+    </div>
+    <div class="clearfix" style="height: auto;">
+        {% include 'user_setting_base.html' %}
+        <div class="main row">
+            <h2 class="orderTit">密码修改</h2>
+            <div class="userPsw row">
+                <form>
+                    <div class="txtTr">
+                        <label>当前密码：</label><input type="text" placeholder="当前密码">
+                    </div>
+                    <div class="txtTr">
+                        <label>新密码：</label><input type="text" placeholder="新密码">
+                    </div>
+                    <div class="txtTr">
+                        <label>确认密码：</label><input type="text" placeholder="确认密码">
+                    </div>
+                    <div class="txtTr">
+                        <button type="submit" class="pswBtn">确认</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
